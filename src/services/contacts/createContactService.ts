@@ -30,10 +30,6 @@ const createContactService = async (
     throw new AppError('contact already exists!', 409)
   }
 
-  if (findContact.phone) {
-    throw new AppError('contact already exists!', 409)
-  }
-
   try {
     const createdContact = contactRepo.create(contactData)
 

@@ -22,8 +22,7 @@ const userSerializer: yup.SchemaOf<IUserRequest> = yup.object().shape({
     .string()
     .matches(regexPhone)
     .required('phone number is required')
-    .min(8)
-    .max(12),
+    .min(8),
 })
 
 const userUpdateSerializer: yup.SchemaOf<IUserUpdate> = yup.object().shape({
