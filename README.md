@@ -14,6 +14,11 @@ Entre no diretório do projeto
 ```shel
   cd customer-base-backEnd
 ```  
+  ou
+  
+```shel
+  code .
+```
 
 
 Instale as dependências
