@@ -25,6 +25,15 @@ Instale as dependências
 ```shel
   yarn
 ```  
+iniciar as migrações 
+
+```shel
+  npm run typeorm migration:generate ./src/migrations/InitialMigration -- -d ./src/data-source.ts
+```  
+
+```shel
+  npm run typeorm migration:run -- -d ./src/data-source
+```  
 
 
 Inicie o servidor
