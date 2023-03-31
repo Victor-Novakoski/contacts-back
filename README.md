@@ -41,6 +41,27 @@ Inicie o servidor
   yarn dev
 ```  
 
+Login
+```shel
+  /auth
+```  
+
+body
+```shel
+{
+	"email":"victor@mail.com",
+	"password":"123456"
+}
+```  
+status 200
+
+```shel
+{
+"token": "token"
+}
+```  
+
+
 Rota
 ```shel
   /user
