@@ -2,20 +2,14 @@ import * as yup from 'yup'
 import {
   iContact,
   iContactRequest,
+  iContacts,
   IcontactUpdate,
 } from '../../interfaces/contact'
-
-const regexPhone = /^\s*(\d{2}|\d{0})[-. ]?(\d{5}|\d{4})[-. ]?(\d{4})[-. ]?\s*$/
 
 const contactSerializer: yup.SchemaOf<iContactRequest> = yup.object().shape({
   name: yup.string().required(),
   email: yup.string().email().required(),
-  phone: yup
-    .string()
-    .matches(regexPhone)
-    .required('phone number is required')
-    .min(8)
-    .max(11),
+  phone: yup.string().required('phone number is required'),
 })
 
 const contactUpdateSerializer: yup.SchemaOf<IcontactUpdate> = yup
@@ -23,11 +17,11 @@ const contactUpdateSerializer: yup.SchemaOf<IcontactUpdate> = yup
   .shape({
     email: yup.string().email().notRequired(),
     name: yup.string().notRequired(),
-    phone: yup.string().matches(regexPhone).notRequired().min(8).max(11),
+    phone: yup.string().notRequired(),
   })
 
 const contactReturnSerializer: yup.SchemaOf<iContact> = yup.object({
-  id: yup.string().notRequired(),
+  id: yup.string(),
   name: yup.string().required(),
   email: yup.string().email('Invalid email format').required(),
   phone: yup.string().required(),
@@ -35,7 +29,7 @@ const contactReturnSerializer: yup.SchemaOf<iContact> = yup.object({
   updatedAt: yup.date().notRequired(),
 })
 
-const contactsReturnSerializer: yup.SchemaOf<iContact[]> = yup.array().of(
+const contactsReturnSerializer: yup.SchemaOf<iContacts[]> = yup.array().of(
   yup.object().shape({
     id: yup.string().notRequired(),
     name: yup.string().notRequired(),

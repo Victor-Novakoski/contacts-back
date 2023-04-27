@@ -5,12 +5,20 @@ export interface iContactRequest {
 }
 
 export interface iContact {
-  id: string
+  id?: string
   name: string
   email: string
   phone: string
-  createdAt: Date
-  updatedAt: Date
+  createdAt?: Date
+  updatedAt?: Date
+}
+export interface iContacts {
+  id?: string
+  name?: string
+  email?: string
+  phone?: string
+  createdAt?: Date
+  updatedAt?: Date
 }
 
 export interface IcontactUpdate {

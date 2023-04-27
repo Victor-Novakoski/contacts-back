@@ -6,8 +6,6 @@ import {
   IUserUpdate,
 } from '../../interfaces/users'
 
-const regexPhone = /^\s*(\d{2}|\d{0})[-. ]?(\d{5}|\d{4})[-. ]?(\d{4})[-. ]?\s*$/
-
 const userSerializer: yup.SchemaOf<IUserRequest> = yup.object().shape({
   name: yup.string().required(),
   email: yup.string().email().required(),
@@ -18,18 +16,14 @@ const userSerializer: yup.SchemaOf<IUserRequest> = yup.object().shape({
     .default(
       'https://argumentumpericias.com.br/biblioteca/2019/09/sem-imagem-avatar.png'
     ),
-  phone: yup
-    .string()
-    .matches(regexPhone)
-    .required('phone number is required')
-    .min(8),
+  phone: yup.string().required('phone number is required'),
 })
 
 const userUpdateSerializer: yup.SchemaOf<IUserUpdate> = yup.object().shape({
   email: yup.string().email().notRequired(),
   name: yup.string().notRequired(),
   password: yup.string().notRequired(),
-  phone: yup.string().matches(regexPhone).notRequired().min(8).max(11),
+  phone: yup.string().notRequired(),
   imageProfile: yup.string().notRequired(),
 })
 
