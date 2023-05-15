@@ -1,4 +1,4 @@
-# customer-base-backEnd
+# contacts-back
 *customer-base*
 Este é um aplicativo no qual você pode gerenciar seus contatos de maneira simples e fácil.
 
@@ -6,7 +6,7 @@ Rodando localmente
 Clone o projeto
 
 ```shel
-  git@github.com:Victor-Novakoski/customer-base-backEnd.git
+  git@github.com:Victor-Novakoski/contacts-back.git
 ```  
 
 
